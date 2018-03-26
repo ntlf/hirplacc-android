@@ -32,7 +32,7 @@ script: ./gradlew :app:build
 
 deploy:
   provider: releases
-  apikey: $GITHUB_KEY
+  api_key: $GITHUB_KEY
   file: app/build/outputs/apk/app-release.apk
   skip_cleanup: true
   on:
