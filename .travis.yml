@@ -29,7 +29,7 @@ before_script:
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
 
-script: ./gradlew :app:build
+script: ./gradlew :app:build :app:connectedDebugAndroidTest
 
 deploy:
   provider: releases
