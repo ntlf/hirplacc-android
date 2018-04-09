@@ -9,7 +9,6 @@ public class DetailPresenter extends Presenter<DetailScreen> {
     @Inject
     NewsInteractor newsInteractor;
 
-
     @Override
     public void attachScreen(DetailScreen screen){
         super.attachScreen(screen);
