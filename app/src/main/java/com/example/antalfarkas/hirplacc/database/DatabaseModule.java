@@ -23,7 +23,7 @@ public class DatabaseModule {
 
     @Singleton
     @Provides
-    public ArticleDatabase provideArticlesDatabase() {
+    public ArticleDatabase provideArticleDatabase() {
         return Room.databaseBuilder(this.context, ArticleDatabase.class, "articles-database").build();
     }
 }

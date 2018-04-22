@@ -22,4 +22,7 @@ public interface ArticleDao {
 
     @Delete
     public void delete(Article article);
+
+    @Query("DELETE FROM Article")
+    void deleteAll();
 }

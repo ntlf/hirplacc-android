@@ -5,6 +5,8 @@ import com.example.antalfarkas.hirplacc.interactor.news.DatabaseInteractor;
 import com.example.antalfarkas.hirplacc.interactor.news.NewsInteractor;
 import com.example.antalfarkas.hirplacc.ui.Presenter;
 
+import java.util.concurrent.Executor;
+
 import javax.inject.Inject;
 
 public class MainPresenter extends Presenter<MainScreen> {
@@ -13,6 +15,9 @@ public class MainPresenter extends Presenter<MainScreen> {
 
     @Inject
     DatabaseInteractor databaseInteractor;
+
+    @Inject
+    Executor executor;
 
     @Override
     public void attachScreen(MainScreen screen) {
