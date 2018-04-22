@@ -2,7 +2,7 @@ package com.example.antalfarkas.hirplacc.interactor.news;
 
 import com.example.antalfarkas.hirplacc.HirPlaccApplication;
 import com.example.antalfarkas.hirplacc.network.api.ArticlesApi;
-import com.example.antalfarkas.hirplacc.network.model.Article;
+import com.example.antalfarkas.hirplacc.model.Article;
 
 import java.io.IOException;
 import java.util.List;

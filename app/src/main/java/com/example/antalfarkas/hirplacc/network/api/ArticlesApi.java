@@ -1,19 +1,12 @@
 package com.example.antalfarkas.hirplacc.network.api;
 
-import com.example.antalfarkas.hirplacc.network.CollectionFormats.*;
-
 
 import retrofit2.Call;
 import retrofit2.http.*;
 
-import okhttp3.RequestBody;
+import com.example.antalfarkas.hirplacc.model.Article;
 
-import com.example.antalfarkas.hirplacc.network.model.Article;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public interface ArticlesApi {
   

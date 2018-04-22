@@ -1,4 +1,4 @@
-package com.example.antalfarkas.hirplacc.network.model;
+package com.example.antalfarkas.hirplacc.model;
 
 import java.util.Objects;
 import io.swagger.annotations.ApiModel;
