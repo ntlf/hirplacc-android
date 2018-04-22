@@ -1,6 +1,7 @@
 package com.example.antalfarkas.hirplacc.ui.main;
 
 import com.example.antalfarkas.hirplacc.HirPlaccApplication;
+import com.example.antalfarkas.hirplacc.interactor.news.DatabaseInteractor;
 import com.example.antalfarkas.hirplacc.interactor.news.NewsInteractor;
 import com.example.antalfarkas.hirplacc.ui.Presenter;
 
@@ -9,6 +10,9 @@ import javax.inject.Inject;
 public class MainPresenter extends Presenter<MainScreen> {
     @Inject
     NewsInteractor newsInteractor;
+
+    @Inject
+    DatabaseInteractor databaseInteractor;
 
     @Override
     public void attachScreen(MainScreen screen) {
