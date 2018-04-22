@@ -1,5 +1,6 @@
 package com.example.antalfarkas.hirplacc.ui.detail;
 
+import com.example.antalfarkas.hirplacc.HirPlaccApplication;
 import com.example.antalfarkas.hirplacc.interactor.news.NewsInteractor;
 import com.example.antalfarkas.hirplacc.ui.Presenter;
 
@@ -12,6 +13,7 @@ public class DetailPresenter extends Presenter<DetailScreen> {
     @Override
     public void attachScreen(DetailScreen screen){
         super.attachScreen(screen);
+        HirPlaccApplication.injector.inject(this);
     }
 
     @Override

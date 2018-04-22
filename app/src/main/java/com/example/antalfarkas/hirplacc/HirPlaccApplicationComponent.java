@@ -5,7 +5,9 @@ import com.example.antalfarkas.hirplacc.interactor.news.NewsInteractor;
 import com.example.antalfarkas.hirplacc.network.NetworkModule;
 import com.example.antalfarkas.hirplacc.ui.UIModule;
 import com.example.antalfarkas.hirplacc.ui.detail.DetailActivity;
+import com.example.antalfarkas.hirplacc.ui.detail.DetailPresenter;
 import com.example.antalfarkas.hirplacc.ui.main.MainActivity;
+import com.example.antalfarkas.hirplacc.ui.main.MainPresenter;
 
 import javax.inject.Singleton;
 
@@ -15,8 +17,10 @@ import dagger.Component;
 @Component(modules = {UIModule.class, InteractorModule.class, NetworkModule.class})
 public interface HirPlaccApplicationComponent {
     void inject(MainActivity mainActivity);
+    void inject(MainPresenter mainPresenter);
 
     void inject(DetailActivity detailActivity);
+    void inject(DetailPresenter detailPresenter);
 
-    void inject(NewsInteractor artistsInteractor);
+    void inject(NewsInteractor newsInteractor);
 }
