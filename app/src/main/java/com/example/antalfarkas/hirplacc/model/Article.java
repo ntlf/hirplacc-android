@@ -1,5 +1,9 @@
 package com.example.antalfarkas.hirplacc.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import java.util.Objects;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -8,10 +12,11 @@ import com.google.gson.annotations.SerializedName;
 
 
 
-
+@Entity
 @ApiModel(description = "")
 public class Article   {
-  
+  @NonNull
+  @PrimaryKey()
   @SerializedName("_id")
   private String id = null;
   
