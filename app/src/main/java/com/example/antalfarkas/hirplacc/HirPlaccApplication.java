@@ -2,6 +2,7 @@ package com.example.antalfarkas.hirplacc;
 
 import android.app.Application;
 
+import com.example.antalfarkas.hirplacc.database.DatabaseModule;
 import com.example.antalfarkas.hirplacc.ui.UIModule;
 
 public class HirPlaccApplication extends Application {
@@ -10,6 +11,6 @@ public class HirPlaccApplication extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
-        injector = DaggerHirPlaccApplicationComponent.builder().uIModule(new UIModule(this)).build();
+        injector = DaggerHirPlaccApplicationComponent.builder().uIModule(new UIModule(this)).databaseModule(new DatabaseModule(this)).build();
     }
 }

@@ -6,6 +6,9 @@ import android.content.Context;
 import com.example.antalfarkas.hirplacc.ui.detail.DetailPresenter;
 import com.example.antalfarkas.hirplacc.ui.main.MainPresenter;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -34,4 +37,11 @@ public class UIModule {
     public DetailPresenter provideDetailPresenter() {
         return new DetailPresenter();
     }
+
+    @Provides
+    @Singleton
+    public Executor provideExecutor() {
+        return Executors.newFixedThreadPool(1);
+    }
+
 }

@@ -1,7 +1,11 @@
 package com.example.antalfarkas.hirplacc.ui.main;
 
+import com.example.antalfarkas.hirplacc.HirPlaccApplication;
+import com.example.antalfarkas.hirplacc.interactor.news.DatabaseInteractor;
 import com.example.antalfarkas.hirplacc.interactor.news.NewsInteractor;
 import com.example.antalfarkas.hirplacc.ui.Presenter;
+
+import java.util.concurrent.Executor;
 
 import javax.inject.Inject;
 
@@ -9,13 +13,20 @@ public class MainPresenter extends Presenter<MainScreen> {
     @Inject
     NewsInteractor newsInteractor;
 
+    @Inject
+    DatabaseInteractor databaseInteractor;
+
+    @Inject
+    Executor executor;
+
     @Override
-    public void attachScreen(MainScreen screen){
+    public void attachScreen(MainScreen screen) {
         super.attachScreen(screen);
+        HirPlaccApplication.injector.inject(this);
     }
 
     @Override
-    public void detachScreen(){
+    public void detachScreen() {
         super.detachScreen();
     }
 }
