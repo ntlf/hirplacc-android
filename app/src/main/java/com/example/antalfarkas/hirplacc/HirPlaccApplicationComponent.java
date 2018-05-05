@@ -18,10 +18,7 @@ import dagger.Component;
 @Singleton
 @Component(modules = {UIModule.class, InteractorModule.class, NetworkModule.class, DatabaseModule.class})
 public interface HirPlaccApplicationComponent {
-    void inject(MainActivity mainActivity);
     void inject(MainPresenter mainPresenter);
-
-    void inject(DetailActivity detailActivity);
     void inject(DetailPresenter detailPresenter);
 
     void inject(ApiInteractor apiInteractor);

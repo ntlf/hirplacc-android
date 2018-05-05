@@ -38,8 +38,6 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        HirPlaccApplication.injector.inject(this);
-
         Intent i = getIntent();
         id = i.getStringExtra("id");
 

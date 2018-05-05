@@ -19,27 +19,38 @@ public class Article   {
   @PrimaryKey()
   @SerializedName("_id")
   private String id = null;
-  
+
   @SerializedName("description")
   private String description = null;
-  
+
   @SerializedName("image_url")
   private String imageUrl = null;
-  
+
   @SerializedName("title")
   private String title = null;
-  
+
   @SerializedName("source_domain")
   private String sourceDomain = null;
-  
+
   @SerializedName("text")
   private String text = null;
-  
+
   @SerializedName("url")
   private String url = null;
-  
 
-  
+
+
+  public Article(String id, String description, String imageUrl, String title, String sourceDomain, String text, String url) {
+    this.id = id;
+    this.description = description;
+    this.imageUrl = imageUrl;
+    this.title = title;
+    this.sourceDomain = sourceDomain;
+    this.text = text;
+    this.url = url;
+  }
+
+
   /**
    **/
   @ApiModelProperty(required = true, value = "")
@@ -50,7 +61,7 @@ public class Article   {
     this.id = id;
   }
 
-  
+
   /**
    **/
   @ApiModelProperty(value = "")
@@ -61,7 +72,7 @@ public class Article   {
     this.description = description;
   }
 
-  
+
   /**
    **/
   @ApiModelProperty(value = "")
@@ -72,7 +83,7 @@ public class Article   {
     this.imageUrl = imageUrl;
   }
 
-  
+
   /**
    **/
   @ApiModelProperty(value = "")
@@ -83,7 +94,7 @@ public class Article   {
     this.title = title;
   }
 
-  
+
   /**
    **/
   @ApiModelProperty(value = "")
@@ -94,7 +105,7 @@ public class Article   {
     this.sourceDomain = sourceDomain;
   }
 
-  
+
   /**
    **/
   @ApiModelProperty(value = "")
@@ -105,7 +116,7 @@ public class Article   {
     this.text = text;
   }
 
-  
+
   /**
    **/
   @ApiModelProperty(value = "")
@@ -116,7 +127,7 @@ public class Article   {
     this.url = url;
   }
 
-  
+
 
   @Override
   public boolean equals(Object o) {
@@ -145,7 +156,7 @@ public class Article   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Article {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");

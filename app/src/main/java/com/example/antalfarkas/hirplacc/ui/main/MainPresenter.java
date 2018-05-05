@@ -30,7 +30,7 @@ public class MainPresenter extends Presenter<MainScreen> {
                 try {
                     List<Article> articleList = apiInteractor.getArticles();
                     saveArticles(articleList);
-                    loadArticles();
+                    screen.showArticles(articleList);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -39,16 +39,11 @@ public class MainPresenter extends Presenter<MainScreen> {
     }
 
     private void saveArticles(final List<Article> articleList) {
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                Article[] articles = new Article[articleList.size()];
-                articles = articleList.toArray(articles);
+        Article[] articles = new Article[articleList.size()];
+        articles = articleList.toArray(articles);
 
-                databaseInteractor.deleteAll();
-                databaseInteractor.saveArticle(articles);
-            }
-        });
+        databaseInteractor.deleteAll();
+        databaseInteractor.saveArticle(articles);
     }
 
     public void loadArticles() {
