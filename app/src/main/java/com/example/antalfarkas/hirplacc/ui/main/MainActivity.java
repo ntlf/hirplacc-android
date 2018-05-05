@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity implements MainScreen, Swipe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HirPlaccApplication.injector.inject(this);
-
         mRecyclerView = findViewById(R.id.rvArticles);
         mRecyclerView.setHasFixedSize(true);
 
