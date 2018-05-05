@@ -1,4 +1,4 @@
-package com.example.antalfarkas.hirplacc.interactor.news;
+package com.example.antalfarkas.hirplacc.interactor.articles;
 
 import com.example.antalfarkas.hirplacc.HirPlaccApplication;
 import com.example.antalfarkas.hirplacc.database.ArticleDatabase;

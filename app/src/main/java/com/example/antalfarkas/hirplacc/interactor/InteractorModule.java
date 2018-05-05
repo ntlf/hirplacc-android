@@ -1,7 +1,7 @@
 package com.example.antalfarkas.hirplacc.interactor;
 
-import com.example.antalfarkas.hirplacc.interactor.news.DatabaseInteractor;
-import com.example.antalfarkas.hirplacc.interactor.news.NewsInteractor;
+import com.example.antalfarkas.hirplacc.interactor.articles.DatabaseInteractor;
+import com.example.antalfarkas.hirplacc.interactor.articles.ApiInteractor;
 
 import dagger.Module;
 import dagger.Provides;
@@ -9,8 +9,8 @@ import dagger.Provides;
 @Module
 public class InteractorModule {
     @Provides
-    public NewsInteractor provideNewsInteractor() {
-        return new NewsInteractor();
+    public ApiInteractor provideNewsInteractor() {
+        return new ApiInteractor();
     }
 
     @Provides
