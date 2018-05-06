@@ -35,6 +35,8 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        HirPlaccApplication.injector.inject(this);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
