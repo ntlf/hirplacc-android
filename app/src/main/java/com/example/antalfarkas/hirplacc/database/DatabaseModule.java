@@ -23,7 +23,7 @@ public class DatabaseModule {
 
     @Singleton
     @Provides
-    public ArticleDatabase provideArticleDatabase() {
-        return Room.databaseBuilder(this.context, ArticleDatabase.class, "articles-database").build();
+    public ArticleDao provideArticleDao() {
+        return Room.databaseBuilder(this.context, ArticleDatabase.class, "articles-database").build().getDAO();
     }
 }
