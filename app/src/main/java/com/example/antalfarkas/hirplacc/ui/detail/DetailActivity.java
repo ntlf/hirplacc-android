@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.example.antalfarkas.hirplacc.HirPlaccApplication;
 import com.example.antalfarkas.hirplacc.R;
 import com.example.antalfarkas.hirplacc.model.Article;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import java.io.InputStream;
 
@@ -28,11 +30,16 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
     TextView tvText;
     TextView tvUrl;
     ImageView imageView;
+    private Tracker mTracker;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        HirPlaccApplication application = (HirPlaccApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+
         setContentView(R.layout.activity_detail);
 
         HirPlaccApplication.injector.inject(this);
@@ -59,6 +66,16 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        String name = "Detail";
+        Log.i("HP", "Setting screen name: " + name);
+        mTracker.setScreenName("Image~" + name);
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         detailPresenter.detachScreen();
@@ -80,6 +97,10 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
 
     @Override
     public boolean onSupportNavigateUp() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Back")
+                .build());
         onBackPressed();
         return true;
     }
