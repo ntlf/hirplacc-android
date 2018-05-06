@@ -6,8 +6,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
 import com.example.antalfarkas.hirplacc.HirPlaccApplication;
 import com.example.antalfarkas.hirplacc.R;
 import com.example.antalfarkas.hirplacc.model.Article;
@@ -17,6 +17,8 @@ import com.example.antalfarkas.hirplacc.ui.main.adapter.ListAdapter;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements MainScreen, SwipeRefreshLayout.OnRefreshListener, ListAdapter.ClickListener {
     @Inject
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements MainScreen, Swipe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         HirPlaccApplication.injector.inject(this);
