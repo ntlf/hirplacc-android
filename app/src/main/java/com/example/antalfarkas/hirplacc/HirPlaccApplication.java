@@ -18,6 +18,7 @@ public class HirPlaccApplication extends Application {
     public void onCreate(){
         super.onCreate();
         sAnalytics = GoogleAnalytics.getInstance(this);
+        sAnalytics.setLocalDispatchPeriod(15);
         injector = DaggerHirPlaccApplicationComponent.builder().uIModule(new UIModule(this)).databaseModule(new DatabaseModule(this)).build();
     }
 
